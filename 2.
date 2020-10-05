@@ -77,7 +77,11 @@ else:
 #SERIES26
 K = int(input("Введите число K: "))
 N = int(input("Введите число N: "))
-Kna = [ float(input("Введите число из набора:")) for i in range(N) ]
-for number in range(1,N+1):
-    number = number**K
-    print(number)
+n = int
+Kna = []
+while len(Kna) != N:
+    Kna.append(float(input("Введите число из набора: ")))
+for n in Kna:
+    n = n**K
+    print(n)
+print("Выше написан преобразованный набор") 
