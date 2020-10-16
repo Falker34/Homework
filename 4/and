@@ -1,0 +1,42 @@
+#WHILE30
+def times(x):
+    return x-C >= C
+#A= int(input("Введите число A:"))
+#B= int(input("Введите число B:"))
+#C= int(input("Введите число C:"))
+f = open("in.txt","r")
+g = open("out.txt","w")
+
+А = f.read(1)
+A = int(А)
+f.read(1)
+B = f.read(1)
+B = int(B)
+f.read(1)
+C = f.read(1)
+C = int(C)
+f.read(1)
+
+
+n = 1
+m = 1
+vsp = 1
+if B < C or A < C:
+    print("В такой прямоугольник не поместиться ни одного квадрата со стороной C.")
+    g.write(str("В такой прямоугольник не поместиться ни одного квадрата со стороной C."))
+else:
+    while times(A):
+        A= A-C
+        n+= 1
+    while times(B):
+        B= B-C
+        m+= 1
+    k = m
+    while vsp != n: #Считаем произведение не прибегая к операции умножения
+        k = k + m
+        vsp+= 1
+    print("Кол-во квадратов со стороной C умещающихся на прямоугольнике со сторонами A и B равно: ", k)
+    g.write(str("Кол-во квадратов со стороной C умещающихся на прямоугольнике со сторонами A и B равно: "))
+    g.write(str(k))
+f.close()
+g.close()
