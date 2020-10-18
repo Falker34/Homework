@@ -1,15 +1,15 @@
 #Series26
-#K = int(input("Введите число K: "))
-#N = int(input("Введите число N: "))
+#K = int(input("Введите число K: "))#степень набора
+#N = int(input("Введите число N: "))#кол-во чисел
 f = open('left.txt','r')
 g = open('dead.txt','w')
 
-N = f.read(1)
+N = f.readline()
+N = N[0:-1]
 N = int(N)
-f.read(1)
-K = f.read(1)
+K = f.readline()
+K = K[0:-1]
 K = int(K)
-f.read(1)
 Kna = f.readline()#запись строки в Kna
 Kna = Kna.replace('\n','')#избавление от \n
 Kna = Kna.split(' ') #разделение Kna по пробелам/преобразование в список
@@ -18,7 +18,7 @@ Kna = [float(n) for n in Kna] #преобразование всех чисел 
 # эта функция не вызывается т.к. числа берутся из файла
 def fill(n):
     Kna = []
-    while len(Kna) != N:
+    while len(Kna) != n:
         Kna.append(float(input("Введите число из набора: ")))
     return Kna
 
@@ -29,9 +29,9 @@ def count(list, k): #укажите список и в какую степень
         a.append(n)
     return a
 Answer = count(Kna,K)
-#print(Answer)
-#print("Выше написан преобразованный набор")
-
+print(Answer)
+print("Выше написан преобразованный набор")
+#count(fill(N),K) эта строчка использовалась бы при прямом вводе чисел
 Answer =(' '.join(map(str,Answer)))#вывод списка чисел преобразованного в строку
 g.write(Answer)
 f.close()
