@@ -1,0 +1,51 @@
+#Proc1
+def PoverA3(A,B):
+    A = float(A)
+    B = float(B)
+    B = A**3
+    return(B)
+print(PoverA3(1,0))
+print(PoverA3(2,0))
+print(PoverA3(3,0))
+print(PoverA3(4,0))
+print(PoverA3(5,0))
+
+#Proc29
+def DigitCount(K):
+    K = int(K)
+    n = 1
+    while K/10 >= 1:
+        n+=1
+        K = K/10
+    return(n)
+print(DigitCount(256))
+print(DigitCount(1000000))
+print(DigitCount(1))
+print(DigitCount(1234567890))
+print(DigitCount(3.14))
+
+#Minmax1
+N = int(input("Введите размер списка:"))
+a = []
+while len(a) != N:
+    a.append(int(input("Введите следующий элемент списка:")))
+print(min(a))
+print(max(a))
+
+#Minmax13
+N = int(input("Введите размер списка:"))
+a = []
+k = 0
+while len(a) != N:
+    a.append(int(input("Введите следующий элемент списка:")))
+
+if (max(a)%2 !=0):
+    k = max(a)
+else:
+    b = []
+    for number in a:
+        if number% 2 !=0:
+            b.append(number)
+    if (len(b) != 0):
+        k = max(b)
+print(k)
