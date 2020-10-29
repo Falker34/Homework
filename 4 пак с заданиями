@@ -1,0 +1,73 @@
+#Array22
+N = int(input("Введите размер списка:"))
+a = []
+while len(a) != N:
+    a.append(int(input("Введите следующий элемент списка:")))
+K = int(input("Введите число K:"))
+L = int(input("Введите число L:"))
+del a[K-1:L]
+print(sum(a))
+
+
+#Array59
+def Average(lst): #вычисляет среднее значение списка
+    return sum(lst) / len(lst)
+N = int(input("Введите размер списка:"))
+A = []
+while len(A) != N:
+    A.append(int(input("Введите следующий элемент списка:")))
+B = []
+index = 0
+for number in A:
+    index += 1
+    #нужно чтобы функция Average работала со списком размера [:индекс текущего элемента (number) + 1]
+    B.append(Average(A[:index]))
+    print(B)
+
+
+#Matrix 37
+import random
+M = int(input("Введите число M (кол-во строк):"))
+N = int(input("Введите число N (кол-во столбцов):"))
+
+first = [[] for x in range (M)]# список из M пустых списков
+for y in first:
+#     y.extend([int(random.uniform(0,101)) for y in range (N)]) # списки заполняются случайными числами от 0 до 100 включительно
+    a = []
+    while len(a) != N:
+        a.append(int(input("Введите число из списка:")))
+    print("Записанная вами строка равна:", a)
+    y.extend(a)
+count = 0
+second = []
+for number in first:
+  second.append(number[N-1]) # нахождение последнего столбца
+
+for index in range(N-1): # с 0 по N-1 индекс
+    m = []
+    for n in first: # в каждом списке first
+        m.append(n[index]) # добавляем выбранный в 15 строке индекс
+    if m == second: # сравниваем с последним столбцом
+        count+=1
+
+print("Последний столбец=", second)
+print("Кол-во столбцов похожих на последний=", count)
+
+
+#Matrix 81
+M = int(input("Введите размерность матрицы:"))
+import random
+Averange = 0
+A = [[] for x in range (M)]# список из M пустых списков
+for y in A:
+    b = []
+    while len(b) != M:
+        b.append(int(input("Введите число из списка:")))
+    print("Записанная вами строка равна:", b)
+    y.extend(b)
+     #y.extend([int(random.uniform(0,101)) for y in range (M)]) # списки заполняются случайными числами от 0 до 100 включительно
+
+for spisok in A:
+    hlp = (spisok[(M-1) - A.index(spisok)]) #нахождение чисел стоящих на побочной диагонали в матрице
+    Averange += hlp
+print("Среднее значение побочной диагонали матрицы равно:", Averange//M)
