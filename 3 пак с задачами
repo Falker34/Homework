@@ -64,16 +64,3 @@ for number in a:
             k = number
 print("Значение наибольшего нечётного числа =", k)
 print("И его номер =", index)
-
-#Minmax13 v2.0
-N = int(input("Введите размер списка:"))
-a = []
-k = 0
-while len(a) != N:
-    a.append(int(input("Введите следующий элемент списка:")))
-l = [number for number in a if (number%2 != 0)]
-if len(l) != 0:
-    print(min(l))
-else:
-    print(k)
-
