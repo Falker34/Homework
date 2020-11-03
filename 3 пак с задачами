@@ -58,9 +58,8 @@ index = 0
 while len(a) != N:
     a.append(int(input("Введите следующий элемент списка:")))
 for number in a:
-    if number % 2 != 0:
-        index = a.index(number)+1
-        if number > k:
-            k = number
+    if number % 2 != 0 and number > k:
+        k = number
+        index = a.index(number) + 1
 print("Значение наибольшего нечётного числа =", k)
 print("И его номер =", index)
