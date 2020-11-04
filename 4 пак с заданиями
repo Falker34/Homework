@@ -69,3 +69,21 @@ for spisok in A:
     hlp = (spisok[(M-1) - A.index(spisok)]) #нахождение чисел стоящих на побочной диагонали в матрице
     Averange += hlp
 print("Среднее значение побочной диагонали матрицы равно:", Averange//M)
+
+#Matrix 81 v1.1
+M = int(input("Введите размерность матрицы:"))
+import random
+Averange = 0
+A = [[] for x in range (M)]# список из M пустых списков
+for y in A:
+    while len(y) != M:
+        y.append(int(input("Введите число из списка:")))
+    print("Записанная вами строка равна:", y)
+
+     #y.extend([int(random.uniform(0,101)) for y in range (M)]) # списки заполняются случайными числами от 0 до 100 включительно
+limb = 0
+for spisok in A:
+    hlp = (spisok[(M-1) - limb]) #нахождение чисел стоящих на побочной диагонали в матрице
+    Averange += hlp
+    limb += 1
+print("Среднее значение побочной диагонали матрицы равно:", Averange//M)
