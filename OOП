@@ -1,0 +1,44 @@
+#M = int(input("Введите кол-во ваших строк: "))
+#N = int(input("Введите кол-во ваших столбцов: "))
+#L = str(input("Введите вашу матрицу(элементы через пробел): "))
+M = int(3) #Количество строк
+N = int(3) #Количество столбцов
+L = "2 1 2 2 1 2 1 2 2"
+
+class Matrix:
+    def __init__(self,lines,colums,matrix):
+        self.colums = colums
+        self.lines = lines
+        self.matrix = matrix
+    def baze(self):
+        matrix = self.matrix.split()# превращение строки с цифрами в элементы списка типа float
+        for number in matrix:
+            number = float(number)
+        baze = [[] for x in range(self.lines)]
+        k = 0
+        for y in baze:
+            while len(y) != self.colums:
+                y.extend(matrix[k])
+                k += 1
+        return baze
+
+shift = Matrix(M,N,L)
+
+count = 0
+second = []
+for number in Matrix.baze(shift):
+    second.append(number[N - 1])  # нахождение последнего столбца
+
+for index in range(N - 1):  # с 0 по N-1 индекс
+    m = []
+    for n in Matrix.baze(shift):  # в каждом списке
+        m.append(n[index])  # добавляем выбранный в 29 строке индекс
+    if m == second:  # сравниваем с последним столбцом
+        count += 1
+
+print("Последний столбец=", second)
+print("Ваша матрица: ")
+print(Matrix.baze(shift)[0])
+print(Matrix.baze(shift)[1])
+print(Matrix.baze(shift)[2])
+print("Кол-во столбцов похожих на последний=", count)
