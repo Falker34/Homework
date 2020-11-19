@@ -6,10 +6,12 @@ N = int(3) #Количество столбцов
 L = "2 1 2 2 1 2 1 2 2"
 
 class Matrix:
+    """"Превращает ряд цифр в мартицу если известны размеры строк и столбцов"""
     def __init__(self,lines,colums,matrix):
         self.colums = colums
         self.lines = lines
         self.matrix = matrix
+
     def baze(self):
         matrix = self.matrix.split()# превращение строки с цифрами в элементы списка типа float
         for number in matrix:
